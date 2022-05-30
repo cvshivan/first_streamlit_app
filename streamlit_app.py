@@ -53,8 +53,7 @@ streamlit.write('The user entered',fruit_choice)
 # output it the screen as table
 
 
-# don't run anything past here while we troubleshoot
-streamlit.stop()
+
 
 
 # import snowflake.connector
@@ -73,6 +72,9 @@ if streamlit.button('Get Fruit Load List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
   streamlit.dataframe(my_data_rows)
+
+# don't run anything past here while we troubleshoot
+streamlit.stop()
 
 # my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 # my_data_row = my_cur.fetchone()
